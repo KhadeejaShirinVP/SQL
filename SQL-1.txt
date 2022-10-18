@@ -1,0 +1,112 @@
+.............SQL Server is a relational database management system (RDBMS) developed by Microsoft. 
+
+*SQL Server
+It is primarily designed and developed to compete with MySQL and Oracle database. 
+SQL Server supports ANSI SQL, which is the standard SQL (Structured Query Language) language. 
+However, SQL Server comes with its own implementation of the SQL language, T-SQL (Transact-SQL).
+
+*T-SQL is a Microsoft propriety Language known as Transact-SQL. 
+It provides further capabilities of declaring variable, exception handling, stored procedure, etc.
+
+*A CLIENT is an application that sends requests to the MS SQL SERVER installed on a given machine. 
+The SERVER is capable of processing input data as requested. 
+Finally, respond with PROCESSED OUTPUT DATA as a result.
+
+*main components and services of SQL server:
+-Database Engine: This component handle storage, Rapid transaction Processing, and Securing Data.
+
+-SQL Server: This service starts, stops, pauses, and continues an instance of Microsoft SQL Server. 
+			 Executable name is sqlservr.exe.
+
+-SQL Server Agent: It performs the role of Task Scheduler. 
+				   It can be triggered by any event or as per demand. 
+				   Executable name is sqlagent.exe.
+
+-SQL Server Browser: This listens to the incoming request and connects to the desired SQL server instance. 
+					 Executable name is sqlbrowser.exe.
+
+-SQL Server Full-Text Search: This lets user running full-text queries against Character data in SQL Tables.
+							  Executable name is fdlauncher.exe.
+
+-SQL Server VSS Writer: This allows backup and restoration of data files when the SQL server is not running.
+						Executable name is sqlwriter.exe.
+
+-SQL Server Analysis Services (SSAS): Provide Data analysis, Data mining and Machine Learning capabilities. 
+									  SQL server is integrated with R and Python language for advanced analytics. 
+									  Executable name is msmdsrv.exe.
+
+-SQL Server Reporting Services (SSRS): Provides reporting features and decision-making capabilities. 
+									   It includes integration with Hadoop. Executable name is ReportingServicesService.exe.
+
+-SQL Server Integration Services (SSIS): Provided Extract-Transform and Load capabilities of the different type of data from one source to another. 
+										 It can be view as converting raw information into useful information. Executable name is MsDtsSrvr.exe.
+
+
+*SQL Server Instances
+-Primary Instances
+-Named Instances
+#There are two ways through which we may access the primary instance. 
+ First, we can use the server name. Secondly, we can use its IP address. 
+ Named instances are accessed by appending a backslash and instance name.
+
+**featuresof sql server
+-user experience
+-availability
+-performance
+-analytics
+-security
+-buisness intelligence
+
+-----install sql server---->connect to sql server using SSMS------->Access Database Engine  
+
+*Importance of SQL Server Instances
+1. For installation of different versions on one machine
+2. For cost reduction
+3. For maintenance of development, production and test environments separately
+4. For reducing temporary database problems
+5. For separating security privileges
+6. For maintaining a standby server
+
+
+**Transact-SQL (T-SQL) is an extension of SQL which is used in SQL Server. 
+ The Transact-SQL or T-SQL is closely integrated into the SQL language, 
+ it also adds programming constructs that are not native to SQL.
+ 
+** A DBMS is a software that is used to manage the database
+*a DBMS basically serves as an interface between the batabase and its end-users or programs, allowing
+ users to retrieve, update, and manage how the informationis organized and optimized.
+ 
+ **types
+ -hierarchical DBMS
+ -network DBMS
+ -relational DBMS
+ -object-oriented DBMS
+ 
+*SQL(Structured query language)
+-A stdized programming language which is used for managing relational databases
+-with SQL,you can modify databases ,add ,update, or delete rows of data,retrievesubsets of information from a database and any more
+-relational database like MySQL database ,oracle,MS MySQL,Sybase etc use SQL.
+-Queries and other sql operation are written as statement.eg:select,insert,add,update,delete,create,alert,truncate.
+
+
+*sql command categories
+1. data definition language command(DDL)-consist of the commands used to define the schema.
+2. data manipulation language commands-  deals with the manipulation of data present in database.
+3. data control language commands-- deals with the rights, permission and controls of the database system.
+4. transaction control language commands- consist of commands which deals with the transaction of database.
+ 
+*sql server data types
+- exact numeric
+-approx. numeric
+-date and time
+-character strings
+-unicode character strings
+-binary strings
+-other data types
+
+
+
+
+ 
+ 
+ 
