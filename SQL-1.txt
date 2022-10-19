@@ -104,6 +104,19 @@ Finally, respond with PROCESSED OUTPUT DATA as a result.
 -binary strings
 -other data types
 
+**keys in DATABASE
+-candidate Key
+- super key
+- primery  key
+- alternate key
+-foreign key
+
+**constraints in database
+-not well--ensure that a null value cannot be stored in a cloumn
+-unique--this makes sure that all the values in a column are different.
+-check--this ensure that all the values in a column satisfy a specific condition.
+-default--this consist of set of default values for the a column when no values is specified.
+-index-- this is used to create and retrievedata from the databse very quickly.
 
 
 
