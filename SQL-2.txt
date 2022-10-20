@@ -1,0 +1,51 @@
+.....****Sql
+-Its is a kind of programming language and it is the std language for interacting with relational databases.
+-using SQl we can manage data in a RDBMS(relational data managaement system)
+1. create new data and tables
+2. insert records
+3. update records 
+4. delete records
+5. retrieve/read records
+
+-sql is pronounced as "S-Q-L" or something as "sequel".
+
+......................................................................................................................
+....**Database
+-Data->data is any sort of information which is stored in computer memory.
+- database->a database is a sysmatic collection of data in an electronic system that allows data to be stored, easily accessed,manipulated and updated
+
+-diff types od database
+. relational
+. hierarchical 
+. network
+. object -oriented 
+. NoSQL 
+
+.......................................................................................................
+.....***Relational database
+-a relational database organizes data into tables which can be linked or related based on data common to each
+-a table has records (rows) and fields(column)
+
+...............................................................................................
+....**Primarey key
+-it is a field in a table which uniquely indentifies each row/record in a database table.
+
+....**Foreign key
+- its is field (or collection of fields) in one table,that refers to the primary key in another table.
+
+...................................................................................................
+
+....**RDBMS
+- Iy is program thatb allows you to create ,update and manipulate a relational database.
+-most RDBMS use the SQL languageto access the database.
+
+. MySQL
+. PosrgreSQL
+. Oracle 
+. Ms SQL server
+. SQLite
+........................................................................................................
+
+
+
+
