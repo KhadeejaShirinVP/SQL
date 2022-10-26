@@ -60,3 +60,4 @@ from((Employee
 inner join Department on Employee.DepID=Department.DepID)
 inner join Salary on Employee.SalaryID=Salary.SalaryID);
 
+----------------------------------------------------------------------------------------

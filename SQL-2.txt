@@ -28,7 +28,7 @@
 
 ...............................................................................................
 ....**Primarey key
--it is a field in a table which uniquely indentifies each row/record in a database table.
+-it is a field in a table which uniquely identifies each row/record in a database table.
 
 ....**Foreign key
 - its is field (or collection of fields) in one table,that refers to the primary key in another table.
@@ -36,7 +36,7 @@
 ...................................................................................................
 
 ....**RDBMS
-- Iy is program thatb allows you to create ,update and manipulate a relational database.
+- It is program thatb allows you to create ,update and manipulate a relational database.
 -most RDBMS use the SQL languageto access the database.
 
 . MySQL
@@ -46,6 +46,6 @@
 . SQLite
 ........................................................................................................
 
-
+ 
 
 

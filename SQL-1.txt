@@ -116,9 +116,21 @@ Finally, respond with PROCESSED OUTPUT DATA as a result.
 -unique--this makes sure that all the values in a column are different.
 -check--this ensure that all the values in a column satisfy a specific condition.
 -default--this consist of set of default values for the a column when no values is specified.
--index-- this is used to create and retrievedata from the databse very quickly.
+-index-- this is used to create and retrieve data from the database very quickly.
+........................................................................................................
 
+**MERGE**
+-the merge statement is used to perform the insert,update, and delete operations on a specific table,where the source table is provided
+----syntax
 
+MERGE TargetTableName USING SourceTableName
+ON MergeCondition
+WHEN MATCHED
+THEN Update_Statement
+WHEN NOT MATCHED
+THEN Inser_Statement
+WHEN NOT MATCHED BY Source
+THEN DELETE;
 
  
  
