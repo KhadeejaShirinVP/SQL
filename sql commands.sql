@@ -157,6 +157,7 @@ insert into OffsetMarks values (62);
 insert into OffsetMarks values (65);
 insert into OffsetMarks values (61);
 
+
 --offset
 select * from OffsetMarks order by Mark OFFSET 1 ROWS;   --sorted and Delete fisrt couple
 
@@ -189,6 +190,7 @@ insert into SupplierTable values(1,12,1230,11,'P1');
 SELECT CustomerID, avg(Cost)as AverageCostOfCustomer from SupplierTable group by CustomerID; 
 
 --pivot
+select * from SupplierTable
 select 'AverageCostOfCustomer' AS Cost_According_To_Customers, [11],[22],[33]
 from(
 select CustomerID,Cost from SupplierTable) AS SourceTable
@@ -196,5 +198,89 @@ PIVOT
 (
 AVG(Cost) for CustomerID in ([11],[22],[33]))as PivotTable;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.......................................................................................................................................................................
+
+--JOINS
+
+create database Study1;
+use Study1;
+
+CREATE TABLE Employee
+(
+Employee_ID int primary key not null,
+Employee_FirstName  varchar(8000),
+Employee_LastName varchar(8000),
+Employee_EmailID varchar(8000),
+Employee_PhnNo bigint,
+Employee_Dept int foreign key references [dbo].[Department](Department_ID)
+);
+
+
+insert into Employee values(1,'Tarun','m','tarun123@gmail.com',5642235678,2)
+insert into Employee values(2,'Diptesh','patar','diptesh567@gmail.com',6578543421,1)
+insert into Employee values(3,'Aves','k','aves90@gmail.com',78654329087,2)
+insert into Employee values(4,'Anshika','agarwal','anshika456@gmail.com',8976543890,4)
+insert into Employee values(5,'Kasim','a','kasimudheen45@gmail.com',8790654327,null)
+insert into Employee values(6,'Pavan','manikandan','pavanmani09@gmail.com',8765457890,null)
+
+alter table Employee
+drop column Employee_Dept
+
+drop table Employee
+
+select * from Employee
+
+create table Department
+(
+Department_ID INT PRIMARY KEY,
+Department_Name varchar(8000) 
+);
+
+insert into Department values (1,'English')
+insert into Department values (2,'Malayalam')
+insert into Department values (3,'Maths')
+insert into Department values (4,'Science')
+insert into Department values (5,'Hindi')
+
+select * from Employee
+select * from Department
+
+select * from Employee
+
+--INNER JOIN
+select * from Employee inner join Department on Employee.Employee_Dept = Department.Department_ID  --full data
+
+select  Employee_FirstName,Employee_EmailID,Employee_PhnNo,Department_Name from Employee 
+inner join Department on Employee.Employee_Dept = Department.Department_ID                          --mentioned clomumns
+
+--LEFT JOIN
+select  Employee_FirstName,Employee_EmailID,Employee_PhnNo,Department_Name from Employee 
+LEFT join Department on Employee.Employee_Dept = Department.Department_ID                           --GIVE FULL DETAILS ON LEFT TABLE AND GIVE CORRESPONDING DETAILS ON RIGHT TABLE.NOT CORRESPONDS SHOW NULL
+
+--RIGHT JOIN
+select  Employee_FirstName,Employee_EmailID,Employee_PhnNo,Department_Name from Employee 
+RIGHT join Department on Employee.Employee_Dept = Department.Department_ID                           --GIVE FULL DETAILS ON RIGHT TABLE AND GIVE CORRESPONDING DETAILS ON LEFT TABLE.NOT CORRESPONDS SHOW NULL             
+
+--FULL JOIN
+select  Employee_FirstName,Employee_EmailID,Employee_PhnNo,Department_Name from Employee 
+FULL join Department on Employee.Employee_Dept = Department.Department_ID                              --FULL RECORDS ON LEFT AND RIGHT TABLES..NOT CORRESPONDS SHOW NULL 
+
+--CROSS JOIN
+select  Employee_FirstName,Employee_EmailID,Employee_PhnNo,Department_Name from Employee 
+CROSS join Department                                                                                 --NO NEED CONDITION ,GIVE FULL RECORDS
 
 

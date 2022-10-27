@@ -46,6 +46,53 @@
 . SQLite
 ........................................................................................................
 
- 
+**SQL JOINS
+1. Inner join
+2. Left join
+3. Right join
+4. Full join
+5. Cross join
+...........................................................................................................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+......................................................................................................
+DATE-->27-10-2022
+
+ **SQL Stored Procedure
+-It is a prepared SQL code that you can save,so the code can be reused
+
+**Defult Constraint
+-it is used to set a defualt value for a column.
+-the defualt value will be added to all new records, if no other value is specified.
 
 
