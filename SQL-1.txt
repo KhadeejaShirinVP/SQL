@@ -131,7 +131,62 @@ WHEN NOT MATCHED
 THEN Inser_Statement
 WHEN NOT MATCHED BY Source
 THEN DELETE;
+........................................................................................................................
+Date 28-10-2022
 
- 
- 
+**Indexes in SQL Server
+-Indexes make the search operation faster by creating something called a B-Tree (Balanced Tree) structure internally. 
+-Whenever the database engine wants to retrieve the data from a database table it will adopt two different mechanisms for searching the data
+		1.Table scan------ If the table having more rows, then it will take more time for searching the required data, so it is a time-consuming process.
+		2.Index Scan/Seek--In Index Scan, the SQL Server Search Engine uses a B-Tree structure 
+						   to search the required data which drastically improves the performance of your search query by reducing the number of scans.
+
+**B-Tree (Balanced Tree)
+-Whenever you create an index (or indexes) on some column(s) of a table in SQL Server then what happens internally is, it creates a B-Tree structure. 
+In the B-Tree structure, the data is divided into three sections i.e. 
+-Root Node, 
+-Non-Leaf Nodes, and
+-Leaf Nodes.
+
+**What is an Index in SQL Server?
+-It is a database object in SQL Server which is used to improve the performance of search operations.
+-When we create an index on any column of a table, then SQL Server internally maintains a separate table called index table. 
+ And when we are trying to retrieve the data from the existing table, depends on the index table, SQL Server directly goes to the table and retrieves the data very quickly.
+-In a table, we can use a maximum of 250 indexes.
+
+**When SQL Server uses Indexes?
+The SQL Server uses indexes of a table provided that the select or update or delete statement contained the “WHERE” clause and moreover the 
+where condition column must be an indexed column. 
+If the select statement contains an “ORDER BY” clause then also the indexes can be used.
+
+Note: When SQL Server is searching for information under the database, 
+first it will verify the best execution plan for retrieving the data and 
+uses that plan which can be either a full-page scan and index scan.
+
+*****
+The syntax for creating an Index in SQL Server:
+
+CREATE [UNIQUE] [CLUSTERED/ NON-CLUSTERED] INDEX <INDEX NAME> ON <TABLE NAME> (<COLUMN LIST>)
+*****
+
+
+**types of indexes**
+
+1.Clustered index
+-The Clustered Index in SQL Server defines the order in which the data is physically stored in a table. 
+-In the case of a clustered index,  the leaf node store the actual data. 
+-As the leaf nodes store the actual data a table can have only one clustered index. 
+-The Clustered Index by default was created when we created the primary key constraint for that table. 
+-That means the primary key column creates a clustered index by default.
+-When a table has a clustered index then that table is called a clustered table. -
+If a table has no clustered index its data rows are stored in an unordered structure.
+
+2.Non-Clustered Index,
+-In SQL Server Non-Clustered Index, the arrangement of data in the index table will be different from the arrangement of data in the actual table. 
+-The data is stored in one place and the index is stored in another place. 
+-Moreover, the index will have pointers to the storage location of the actual data.
+
+**Clustered Index in SQL Server**
+
+
  
