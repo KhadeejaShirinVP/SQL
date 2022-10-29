@@ -145,3 +145,32 @@ END
 EXEC UpdateDepartment 4,'QA'
 
 -----------------------------------------------------------------------------------------------------------------------------
+--insert salary etails
+create proc insertSal
+					(@SalaryID INT,
+					@SalaryAmt int
+					)
+as 
+begin 
+			insert into Salary
+					(SalaryID,SalaryAmt)
+			values	
+					(@SalaryID,@SalaryAmt)
+end
+
+exec insertSal 215,467483
+
+------------------------------------------------------------------------------------------------------------------------
+--update salary
+create proc UpdateSalaryDetails
+@SalaryID int,
+@SalaryAmt int
+as
+begin
+	update Salary set SalaryAmt=@SalaryAmt where SalaryID=@SalaryID;
+END
+
+EXEC UpdateSalaryDetails 214,453298
+
+
+
