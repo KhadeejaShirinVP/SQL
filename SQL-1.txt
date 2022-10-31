@@ -187,6 +187,118 @@ If a table has no clustered index its data rows are stored in an unordered struc
 -Moreover, the index will have pointers to the storage location of the actual data.
 
 **Clustered Index in SQL Server**
+-When a table has a clustered index then the table is called a clustered table. 
+-If a table has no clustered index, its data rows are stored in an unordered structure.
+
+-sp_helpindex Employee
+-Execute sp_helpindex Employee
+
+ -The job of Clustered Index in SQL Server is to determine or organized data in either ascending or 
+  descending order on the column(s) on which it is created. 
+  
+  
+**Views**
+-Views as virtual tables. As a virtual table, the Views do not store any data physically by default. 
+-views in SQL Server act as an interface between the Table(s) and the user.
+
+*differences between a table and a view in SQL Server
+-The table is physical whereas the view is logical or virtual.
+-A Table is an independent object whereas a view is a dependent object that is a view depends on the table or tables from which it is loading the data.
+-When a new table is created from an existing table the new and old tables are independent themselves that is the 
+ changes of one table will not be reflected into the other table whereas if a view is created based on a 
+ table any changes that are performed on the table reflects into the view and any changes performed on the view reflected in the table also.
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+DATE: 31-10-2022
 
 
+**Non-Clustered Index
+-In the Non-Clustered Index, the arrangement of data in the index table will be different from the arrangement of data in the actual table. 
+-The data is stored in one place and the index table is stored in another place. 
+-Moreover, the index table will have pointers to the storage location of the actual data.
+
+-Both clustered and the non-clustered index has the same B-Tree structure (i.e. having the Root Node, Intermediate Node (Non-Leaf Node), and Leaf Nodes). 
+-The only difference between the clustered and non-clustered index is how the leaf nodes are worked.
+-non-clustered index leaf node has a Row Identifier (RID), and this Row ID points to different things based on the situation.
+
+-As the non-clustered indexes are created separately from the actual data, so, a table can have more than one non-clustered index in SQL Server. 
+-In the index table, the data is stored either in the ascending or descending order of the index key which does not make any effect or changes to the actual data stored in the table. 
+  
+  **difference between clustered and non-clustered indexes in SQL Server
+-We can create only one clustered index per table whereas we can create more than one non-clustered index per table in SQL Server.
+-In the clustered index, the leaf node actually holds the data and in the case of a non-clustered index, the leaf node actually 
+ points to the leaf node of a clustered index or points to the heap table if the table does not have any clustered index.
+-The SQL Server Clustered Index determines the order in which the data is physically stored in a table and hence does not require additional 
+ disk space whereas a Non-Clustered Index in SQL Server is stored separately from the actual table, so additional disk space is required.
+  
+**When should we create indexes on a table in SQL Server?
+-We need to create indexes on table columns provided those columns are frequently used in where conditions or order by clause in a select query. 
+ It is not advised to create an index on each and every column because a number of indexes can degrade the performance of the database also. 
+ This is because every modification we make to the data should be reflected in all the index tables.
  
+*The Clustered Index is slightly faster than the Non-Clustered Index in SQL Server. This is because, in the case of the clustered index, 
+ the leaf node actually holds the actual data, and hence when we search any data, it directly gets the data from the leaf node. On the other hand, 
+ in the case of a Non-Clustered Index, the leaf node actually points to the leaf node of clustered index or to the heap table and 
+ hence there is an extra look-up from the Non-Clustered Index to the actual table (leaf node of a clustered index or heap table) to fetch the actual data.
+  
+**Page split
+-Page split is nothing but when the current data page is filled with space or space is not enough for the record to insert it will 
+ create a new data page and insert that record into the new data page. This is called a Page Split. 
+ So, when your table having too many indexes, then you have too many page splits which affect the performance of your application.
+
+
+**UNIQUE CLUSTERED INDEX
+-As we marked the Id column as the Primary Key column in the Employees table, by default a UNIQUE CLUSTERED INDEX gets created in the Id column. 
+-To check whether a UNIQUE CLUSTERED INDEX is created or not use the sp_helpindex system stored procedure as shown below.
+
+-sp_helpindex Employees
+  
+-The UNIQUENESS is a property of an Index in SQL Server and both CLUSTERED and NON-CLUSTERED indexes can be created as UNIQUE.
+  
+  
+**differences between the UNIQUE Constraints and the UNIQUE Index
+-There are no major differences between a unique constraint and a unique index in SQL Server. 
+-In fact, when we add a unique constraint, a unique index gets created behind the scenes.
+
+*When should you be creating a unique constraint over a unique index?
+-To make the intentions clear create a unique constraint when the data integrity is the objective. 
+ This makes the objective of the index very clear. In either case, the data is validated in the same manner, 
+ and the query optimizer does not differentiate between a unique index created by a unique constraint or manually created.
+ 
+**Points to Remember:
+-When we create a PRIMARY KEY constraint in SQL Server, a unique clustered index on the column or columns is automatically created if a clustered index on the table does not already exist.
+
+-When we create a UNIQUE constraint in SQL Server, a unique non-clustered index is created automatically to enforce a UNIQUE constraint by default. 
+
+-We cannot create a UNIQUE constraint or a UNIQUE index in SQL Server on an existing table if the table contains duplicate values in the key columns. 
+ To solve this, you need to remove the key columns from the index definition or delete or update the duplicate values.
+
+-By default, duplicate values are not allowed on key columns, when you have a unique index or constraint. 
+  For, example if you try to insert 10 rows, out of which 5 rows contain duplicates, then all the 10 rows are rejected. 
+  However, if I want only the 5 duplicate rows to be rejected and accept the non-duplicate 5 rows, then I can use the IGNORE_DUP_KEY option. An example of using the IGNORE_DUP_KEY option is shown below.
+ "CREATE UNIQUE INDEX IX_IndexName ON TableName(ColumnName) WITH IGNORE_DUP_KEY"
+ 
+**Limitations and Restrictions
+-The unique index, UNIQUE constraint, or PRIMARY KEY constraint cannot be created if duplicate key values exist in the data.
+-A unique non-clustered index can contain included non-key columns 
+
+  
+*** function in SQL Server
+-It is a subprogram that is used to perform an action 
+ such as complex calculation and returns the result of the action as a value. 
+-2 types
+1. System Defined Function		-The functions which are already defined by the system and ready to be 
+								 used by the developer are called system-defined functions
+2. User-Defined Function		-the function is defined by the user or developer then such types of functions are called the user-defined function.
+
+**In SQL Server, we can create three types of User-Defined Functions, such as
+
+1.Scalar Valued Functions
+2.Inline Table-Valued Functions
+3.Multi-Statement Table-Valued Functions
+
+
+
+
+
+

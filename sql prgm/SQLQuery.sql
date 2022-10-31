@@ -85,7 +85,9 @@ exec InsertData 107,'Kallyan',29,211,3
 --select EmpName,EmpAge
 --from Employee
 --where 
-	...............................................................................................................
+	.......................................................................................................................................
+	
+	--create view
 	CREATE VIEW GetEmplyeeDetails
 	as
 	SELECT EmpName,DepName,SalaryAmt
