@@ -142,7 +142,7 @@ Date 28-10-2022
 						   to search the required data which drastically improves the performance of your search query by reducing the number of scans.
 
 **B-Tree (Balanced Tree)
--Whenever you create an index (or indexes) on some column(s) of a table in SQL Server then what happens internally is, it creates a B-Tree structure. 
+-Whenever we create an index (or indexes) on some column(s) of a table in SQL Server then what happens internally is, it creates a B-Tree structure. 
 In the B-Tree structure, the data is divided into three sections i.e. 
 -Root Node, 
 -Non-Leaf Nodes, and
@@ -178,8 +178,8 @@ CREATE [UNIQUE] [CLUSTERED/ NON-CLUSTERED] INDEX <INDEX NAME> ON <TABLE NAME> (<
 -As the leaf nodes store the actual data a table can have only one clustered index. 
 -The Clustered Index by default was created when we created the primary key constraint for that table. 
 -That means the primary key column creates a clustered index by default.
--When a table has a clustered index then that table is called a clustered table. -
-If a table has no clustered index its data rows are stored in an unordered structure.
+-When a table has a clustered index then that table is called a clustered table. 
+-If a table has no clustered index its data rows are stored in an unordered structure.
 
 2.Non-Clustered Index,
 -In SQL Server Non-Clustered Index, the arrangement of data in the index table will be different from the arrangement of data in the actual table. 
@@ -297,6 +297,9 @@ DATE: 31-10-2022
 2.Inline Table-Valued Functions
 3.Multi-Statement Table-Valued Functions
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2-11-2022
 
 
 
